@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Truth AI – American-Owned, America-First, U.S.-Only AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Truth AI is an American-owned, America-First, U.S.-only conservative AI assistant. Get news and commentary through a right-leaning, America-First lens."
+  />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #050811;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(5, 8, 17, 0.9);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+    .logo span {
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      align-items: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #c41230, #153e7e);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .btn-ghost {
+      border-color: rgba(255,255,255,0.2);
+      background: transparent;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1rem 3.5rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.2);
+      opacity: 0.9;
+    }
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    @media (min-width: 800px) {
+      .hero-grid {
+        grid-template-columns: 3fr 2fr;
+        align-items: center;
+      }
+    }
+    h1 {
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      margin: 0.7rem 0;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+    p {
+      font-size: 0.98rem;
+      color: #d4d7e3;
+    }
+    .hero-sub {
+      margin-bottom: 1rem;
+    }
+    .hero-bullets {
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .hero-bullets li {
+      margin-left: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      align-items: center;
+    }
+    .hero-note {
+      font-size: 0.78rem;
+      opacity: 0.8;
+      margin-top: 0.4rem;
+    }
+    .hero-card {
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: radial-gradient(circle at top left, #1a2440 0, #050811 55%);
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .hero-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-card p {
+      font-size: 0.9rem;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+      font-size: 0.78rem;
+    }
+    .pill {
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .section-header {
+      margin-bottom: 1.25rem;
+    }
+    .three-col {
+      display: grid;
+      gap: 1.25rem;
+    }
+    @media (min-width: 800px) {
+      .three-col {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .card {
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 1.1rem;
+      background: radial-gradient(circle at top, #101728 0, #050811 60%);
+      font-size: 0.9rem;
+    }
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .pricing-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    @media (min-width: 700px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .price-card {
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: radial-gradient(circle at top, #111b33 0, #050811 60%);
+      padding: 1.4rem;
+    }
+    .price-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+    .price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0.4rem 0;
+    }
+    .price-note {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      margin-bottom: 0.6rem;
+    }
+    .price-list {
+      font-size: 0.88rem;
+      margin-bottom: 0.75rem;
+    }
+    .price-list li {
+      margin-left: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+    .badge-best {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      margin-left: 0.4rem;
+    }
+    .small-print {
+      font-size: 0.78rem;
+      opacity: 0.8;
+      margin-top: 0.4rem;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    .faq-item h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 1.2rem 1rem 2rem;
+      font-size: 0.8rem;
+      color: #a1a7c0;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .footer-links a {
+      margin-right: 0.8rem;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <span>TRUTH AI</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#signin">Sign In</a></li>
+          <li><a href="#hero" class="btn btn-primary">Try 2 Free Chats</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="badge">🇺🇸 American-Owned • America-First • U.S.-Only</div>
+          <h1>Truth AI</h1>
+          <p class="hero-sub">
+            Get news and commentary through a conservative, America-First lens —
+            built in America, hosted in America, for Americans only.
+          </p>
+          <ul class="hero-bullets">
+            <li>U.S.-owned & U.S.-hosted platform</li>
+            <li>Conservative, America-First perspective</li>
+            <li>Selected U.S. conservative outlets & public posts</li>
+            <li>2 free chats — no account required</li>
+          </ul>
+          <div class="hero-actions">
+            <a href="#chat" class="btn btn-primary">Try 2 Free Chats</a>
+            <a href="#pricing" class="btn btn-ghost">See Pricing</a>
+          </div>
+          <div class="hero-note">
+            Available only to users located in the United States.
+          </div>
+        </div>
+        <div>
+          <div class="hero-card">
+            <h3>America-First AI Assistant</h3>
+            <p>
+              Ask about politics, policy, the economy, immigration, culture and more.
+              Truth AI answers from a clear, conservative, America-First perspective.
+            </p>
+            <div class="pill-row">
+              <div class="pill">Strong borders</div>
+              <div class="pill">Law & order</div>
+              <div class="pill">Energy independence</div>
+              <div class="pill">Free speech</div>
+              <div class="pill">Limited government</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how">
+      <div class="section-header">
+        <h2>How Truth AI Works</h2>
+        <p>Three simple steps to get America-First answers.</p>
+      </div>
+      <div class="three-col">
+        <div class="card">
+          <h3>1. Ask Anything (America-First)</h3>
+          <p>
+            Type your question about news, policy, elections, the economy,
+            immigration, crime, culture and more. Truth AI is built to speak
+            from a conservative, America-First perspective.
+          </p>
+        </div>
+        <div class="card">
+          <h3>2. U.S. Sources Only</h3>
+          <p>
+            Truth AI focuses on U.S.-based conservative outlets, public posts,
+            and official American data to build its responses. No foreign
+            data centers, no global platform control.
+          </p>
+        </div>
+        <div class="card">
+          <h3>3. Get a Clear Conservative Take</h3>
+          <p>
+            You get explanations and talking points framed around national
+            sovereignty, law and order, free markets, strong borders, and
+            constitutional rights.
+          </p>
+        </div>
+      </div>
+      <div class="small-print" style="margin-top:0.9rem;">
+        🔎 <strong>Bias Transparency:</strong> Truth AI does not claim neutrality.
+        It clearly presents information from a conservative, America-First perspective.
+      </div>
+    </section>
+
+    <!-- AMERICA-FIRST PROMISE -->
+    <section id="promise">
+      <div class="section-header">
+        <h2>Our America-First Promise</h2>
+        <p>Built by Americans, for American political conversations.</p>
+      </div>
+      <div class="three-col">
+        <div class="card">
+          <h3>🇺🇸 American-Owned</h3>
+          <p>
+            Truth AI is created and owned in the United States, using U.S.
+            companies for infrastructure, banking, and operations.
+          </p>
+        </div>
+        <div class="card">
+          <h3>🧭 U.S.-Only Access</h3>
+          <p>
+            Access is restricted to users physically located in the United States.
+            Truth AI is built for American citizens and American issues.
+          </p>
+        </div>
+        <div class="card">
+          <h3>🛡️ U.S. Servers Only</h3>
+          <p>
+            All data is processed and stored on servers located in the United States.
+            No foreign data centers, no overseas processing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="section-header">
+        <h2>Simple, America-First Pricing</h2>
+        <p>Try Truth AI free for 2 chats. Keep going with a subscription.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Monthly Plan</h3>
+          <div class="price">$19.99 / month</div>
+          <div class="price-note">
+            Great for trying Truth AI full-time.
+          </div>
+          <ul class="price-list">
+            <li>Unlimited chats</li>
+            <li>Full America-First answers</li>
+            <li>Priority access to new features</li>
+            <li>Support American-owned AI</li>
+          </ul>
+          <a href="#signin" class="btn btn-primary">Start Monthly – $19.99</a>
+        </div>
+        <div class="price-card">
+          <h3>Annual Plan <span class="badge-best">Best Value</span></h3>
+          <div class="price">$99 / year</div>
+          <div class="price-note">
+            Save over 50% compared to monthly billing.
+          </div>
+          <ul class="price-list">
+            <li>Unlimited chats all year</li>
+            <li>Locked-in yearly rate</li>
+            <li>Priority support</li>
+            <li>Support independent America-First tech</li>
+          </ul>
+          <a href="#signin" class="btn btn-primary">Go Annual – $99</a>
+        </div>
+      </div>
+      <div class="small-print">
+        Subscriptions automatically renew until canceled. You can cancel anytime
+        from your account dashboard. No refunds for partial billing periods.
+      </div>
+    </section>
+
+    <!-- FREE TRIAL EXPLAINER -->
+    <section id="trial">
+      <div class="section-header">
+        <h2>Your Free Trial</h2>
+      </div>
+      <p>
+        Every new visitor gets <strong>2 free chats</strong> with Truth AI — no
+        account required. Ask your questions, see how America-First answers feel,
+        and then decide if you want to subscribe.
+      </p>
+      <p style="margin-top:0.6rem;">
+        After your 2 free chats, you’ll see this message:
+      </p>
+      <div class="card" style="margin-top:0.6rem;">
+        <strong>🇺🇸 You’ve reached your 2 free Truth AI chats.</strong><br />
+        Create a free American account and subscribe to keep accessing
+        America-First answers.<br /><br />
+        👉 <strong>$19.99/month</strong> or <strong>$99/year</strong>.
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-item">
+        <h3>Is Truth AI neutral?</h3>
+        <p>
+          No. Truth AI is openly conservative and America-First. It is designed
+          for users who want news, commentary, and analysis from a right-leaning,
+          pro-America perspective.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Is Truth AI available outside the United States?</h3>
+        <p>
+          No. Truth AI is intended only for users physically located in the
+          United States. Access from other countries is blocked.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>What do I get for free?</h3>
+        <p>
+          You can send <strong>2 chats</strong> to Truth AI with no account or
+          payment. After that, you’ll need to create an account and choose a
+          subscription plan to continue.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>What kind of questions can I ask?</h3>
+        <p>
+          You can ask about current events, public policy, the economy, border
+          issues, crime, culture, and more. Truth AI will answer from an
+          America-First conservative perspective.
+        </p>
+      </div>
+      <div class="faq-item" id="signin">
+        <h3>Can I cancel my subscription?</h3>
+        <p>
+          Yes. You can cancel anytime from your account settings. Your access
+          will continue until the end of the current billing period.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 Truth AI. American-Owned. America-First. U.S.-Only.</div>
+      <div class="footer-links">
+        <a href="#terms">Terms of Service</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
